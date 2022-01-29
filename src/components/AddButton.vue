@@ -5,7 +5,8 @@ const now = new Date();
 const y = now.getFullYear();
 const m = now.getMonth() + 1;
 const d = now.getDate();
-const createdAt = y + '年' + m + '月' + d + '日'
+const s = now.getSeconds();
+const createdAt = y + '年' + m + '月' + d + '日' + s + '秒' ;
 const props = defineProps({
   msg: String,
 })

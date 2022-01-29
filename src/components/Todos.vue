@@ -1,7 +1,11 @@
 <script setup>
   const props = defineProps({
     todos: Array,
-  })
+  });
+  const emit = defineEmits(['delete-todo']);
+  function deleteTodo(id) {
+    emit('delete-todo', id);
+  };
 </script>
 
 <template>
@@ -10,6 +14,7 @@
       {{ todo.todoName }}
     </h3>
     <p>{{ todo.cleatedAt }}</p>
+    <button @click="deleteTodo(todo.id)">削除</button>
   </div>
 </template>
 
@@ -22,4 +27,8 @@
     height: auto;
     padding: 10px 20px;
   }
+  button {
+background-image: linear-gradient(90deg, red 0%, #009efd 100%);
+  }
+
 </style>
